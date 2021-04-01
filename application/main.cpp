@@ -4,68 +4,40 @@
  *
  */
 
+#include <graph.hpp>
+
 /* Application Entry Point */
 int main(int argc, char **argv)
 {
-    /* Starts Profile Session */
-    H_PROFILE_BEGIN_SESSION("Application Profile", "profile_results.json");
+    /* Profiles the Main Function */
+    H_PROFILE_FUNCTION();
 
+    /* Initialize Logger */
+    Horus::Logger::init();
+
+    /* Graph Testing */
+    graph g;
+    graph::iterator g_it;
+
+    g.emplace({0, {1, 2, 3}});
+    g.emplace({1, {0, 3}});
+    g.emplace({2, {0, 3}});
+    g.emplace({3, {0, 1, 2}});
+
+    for (g_it = g.begin(); g_it != g.end(); ++g_it)
     {
-        /* Profiles the Main Function */
-        H_PROFILE_FUNCTION();
-
-        /* Initialize Logger */
-        Horus::Logger::init();
-
-        {
-            /* Profiles the Logging ShowCase Scope */
-            H_PROFILE_SCOPE("Logging Showcase");
-
-            /* CMake Configured File Defines */
-            H_INFO("[PROJECT_NAME] {}", PROJECT_NAME);
-            H_INFO("[PROJECT_VERSION] {}", PROJECT_VERSION);
-            H_INFO("[PROJECT_DESCRIPTION] {}", PROJECT_DESCRIPTION);
-            H_INFO("[PROJECT_URL] {}", PROJECT_HOMEPAGE_URL);
-
-            /* Platform Detection Utils */
-#if defined(H_PLATFORM_EMSCRIPTEN)
-            H_INFO("[PLATFORM] {}", "Emscripten");
-#elif defined(H_PLATFORM_WINDOWS)
-            H_INFO("[PLATFORM] {}", "Windows");
-#elif defined(H_PLATFORM_IOS)
-            H_INFO("[PLATFORM] {}", "IOS");
-#elif defined(H_PLATFORM_MACOS)
-            H_INFO("[PLATFORM] {}", "MACOS");
-#elif defined(H_PLATFORM_ANDROID)
-            H_INFO("[PLATFORM] {}", "Android");
-#elif defined(H_PLATFORM_LINUX)
-            H_INFO("[PLATFORM] {}", "Linux");
-#endif // Platform Detection Utils
-
-            /* Log Utils */
-            H_TRACE("That's a trace!");
-            H_DEBUG("That's a debug.");
-            H_INFO("That's an info.");
-            H_WARN("That's a warning.");
-            H_ERROR("That's an error.");
-            H_CRITICAL("That's a critical.");
-
-            /* CLI Args */
-            if (argc > 1)
-            {
-                H_INFO("[CLI] Args");
-                for (size_t i = 1; i < argc; i++)
-                    H_INFO(" - [{}] {}", i - 1, argv[i]);
-            }
-        }
+        H_DEBUG("----");
+        for (const int &f : g_it->second)
+            H_DEBUG("[{}] {}", g_it->first, f);
     }
 
-    /* Ends Profile Session */
-    H_PROFILE_END_SESSION();
+    H_DEBUG("Highest Degree Vertex: {}", g.highest_degree_vertex());
+    H_DEBUG("Lowest Degree Vertex: {}", g.lowest_degree_vertex());
 
-    /* Assertions Examples */
-    H_ASSERT(true);                                  // Assertion with default message
-    H_ASSERTM(true, "Assertion with {}", "message"); // Assertion with user defined message
+    if (g.check_common_connection(0, 1, 3))
+        H_DEBUG("Check Common Connection: 0 -> 3 <- 1");
+
+    H_DEBUG("Is Euler Walkable: {}", g.is_euler_walkable() ? "True" : "False");
 
     return 0;
 }

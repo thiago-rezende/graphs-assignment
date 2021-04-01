@@ -22,10 +22,10 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 endif()
 
 # Setting up the project name and version
-project(CMakeStarterProject
-        VERSION 3.1.2
-        DESCRIPTION "A Simple C++ Starter Project Using CMake"
-        HOMEPAGE_URL "https://github.com/thiago-rezende/cmake-starter-project"
+project(GraphsAssignment
+        VERSION 1.0.0
+        DESCRIPTION "A Simple Graph Implementation"
+        HOMEPAGE_URL "https://github.com/thiago-rezende/graphs-assignment"
         LANGUAGES CXX)
 
 # Add the cmake folder so the modules path

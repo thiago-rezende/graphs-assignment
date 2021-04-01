@@ -13,6 +13,8 @@ set(APPLICATION_HEADERS
     "core/logger.h"
     "debug/assert.h"
     "debug/instrumentor.h"
+    # Graph
+    "graph.hpp"
 )
 
 # Source files

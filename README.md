@@ -1,21 +1,21 @@
-# C++ Starter Project Using CMake
+# Graphs Assignment
 ![build-status-badge] ![license-badge] ![cpp-badge] ![cmake-badge]
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/thiago-rezende/cmake-starter-project">
-    <img src="https://github.com/thiago-rezende/cmake-starter-project/raw/main/.github/logo.png" alt="Logo" width="100" height="100">
+  <a href="https://github.com/thiago-rezende/graphs-assignment">
+    <img src="https://github.com/thiago-rezende/graphs-assignment/raw/main/.github/logo.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">CMake Starter Project</h3>
+  <h3 align="center">Graphs Assignment</h3>
   <p align="center">
-    A Simple C++ Starter Project Using CMake
+    A Simple Graph Implementation
     <br />
-    <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Report Bug</a>
+    <a href="https://github.com/thiago-rezende/graphs-assignment/issues">Report Bug</a>
     ·
-    <a href="https://github.com/thiago-rezende/cmake-starter-project/issues">Request Feature</a>
+    <a href="https://github.com/thiago-rezende/graphs-assignment/issues">Request Feature</a>
     .
-    <a href="https://github.com/thiago-rezende/cmake-starter-project/actions">Continuous Integration</a>
+    <a href="https://github.com/thiago-rezende/graphs-assignment/actions">Continuous Integration</a>
   </p>
 </div>
 
@@ -75,7 +75,7 @@
 [catch2-url]: https://github.com/catchorg/Catch2
 
 <!-- Badges -->
-[build-status-badge]: https://github.com/thiago-rezende/cmake-starter-project/workflows/build/badge.svg
+[build-status-badge]: https://github.com/thiago-rezende/graphs-assignment/workflows/build/badge.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
 [cmake-badge]: https://img.shields.io/badge/CMake-3.16.0-blueviolet.svg?style=flat-square
 [cpp-badge]: https://img.shields.io/badge/C++-17-orange.svg?style=flat-square
