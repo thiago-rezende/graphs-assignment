@@ -19,19 +19,48 @@
   </p>
 </div>
 
- - Libraries Included
-    - [Spdlog][spdlog-url]
-    - [Catch2][catch2-url]
+## Build Instructions
+> Clone the repo with submodules
+```sh
+git clone --recursive https://github.com/thiago-rezende/graphs-assignment.git
+```
 
- - Features
-    - Full featured logger
-    - Assertion utilities compatible with the logger
-    - Instrumentation for profiling [compatible with chromium tracing]
-    - Platform detection utilities
-    - Documentation generation with Doxygen
-    - Unit testing with Catch2 and CTest
-    - CI with GitHub Actions
-    - Pre-compiled headers to improve build times
+> Create build directory
+```sh
+cd graphs-assignment
+mkdir build
+```
+
+> Generate project files
+```sh
+cd build
+cmake ..
+```
+
+> Build
+```sh
+cmake --build .
+```
+
+> Run
+```sh
+./bin/application
+```
+
+
+## Libraries Included
+  - [Spdlog][spdlog-url]
+  - [Catch2][catch2-url]
+
+## Features
+  - Full featured logger
+  - Assertion utilities compatible with the logger
+  - Instrumentation for profiling [compatible with chromium tracing]
+  - Platform detection utilities
+  - Documentation generation with Doxygen
+  - Unit testing with Catch2 and CTest
+  - CI with GitHub Actions
+  - Pre-compiled headers to improve build times
 
  - Project structure
  ```
